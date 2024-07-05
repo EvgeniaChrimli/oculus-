@@ -1,0 +1,551 @@
+@font-face {
+  font-family: "Helvetica", sans-serif;
+  src: url(../fonts/Helvetica.ttf);
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Helvetica-bold", sans-serif;
+  src: url(../fonts/Helvetica-Bold.ttf);
+  font-style: normal;
+  font-weight: bold;
+}
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+/* вверху сбросы стилей */
+button {
+  color: inherit;
+  font-size: inherit;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+}
+
+.container {
+  max-width: 1220px; /* сумма паддингов + */
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.section-title {
+  /* общий класс для заголовков  + */
+  text-transform: uppercase;
+  font-weight: 400;
+}
+body {
+  font-family: "Helvetica", sans-serif;
+  font-weight: 400;
+  font-size: 16;
+  line-height: 1.4;
+  color: #5c5c5e;
+}
+
+.header {
+  border-bottom: 1px solid #cacad6;
+}
+.nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  height: 80px;
+}
+
+.menu {
+  display: flex;
+  gap: 0 20px;
+}
+
+.basket {
+  position: relative;
+  justify-self: end;
+}
+.logo {
+  justify-self: center;
+}
+.basket span {
+  font-size: 11px;
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block;
+  color: #fff;
+  position: absolute;
+  display: flex;
+  line-height: 0;
+  align-items: center;
+  bottom: 0;
+  right: -2px;
+  justify-content: center;
+}
+
+.top {
+  min-height: calc(
+    100vh - 81px
+  ); /* надо на 100%, но уже есть высота хедера(80 добав 1(был бордер) чтоб не было скрола),поэтому высчитываем*/
+  background-image: url(../img/Rectangle\ 2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center; /* акцент на низ картинки и выравние по ширине центр */
+}
+
+.title {
+  color: #5c5c5e;
+  padding-top: 16%; /* было по макету 230px в консоли можно варьировать и смотреть*/
+  font-size: 96px;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.subtitle {
+  color: #5c5c5e;
+  font-size: 36px;
+  margin-bottom: 5px;
+}
+
+.toptext {
+  font-size: 13px;
+  margin-bottom: 50px;
+}
+
+.buy__text {
+  font-size: 13px;
+  padding-top: 6px;
+}
+.buy-btn {
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(180deg, #bc10d8 0%, rgba(80, 0, 250, 0.93) 100%);
+  display: flex;
+  text-transform: uppercase;
+  padding: 1px;
+}
+.buy-btn__text {
+  color: #f6f4f5;
+  padding: 20px 110px;
+  text-transform: uppercase;
+}
+.buy-btn__price {
+  color: #5c5c5e;
+  background-color: #f6f4f5;
+  padding: 20px 105px;
+}
+.futures {
+  padding: 100px 0;
+}
+.feature__titles {
+  display: flex;
+}
+.future__title {
+  flex-basis: 300px; /*задаёт  размер флекс элемента по основной оси*/
+}
+.feature__text {
+  max-width: 330px;
+  font-size: 36px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  background: linear-gradient(180deg, #bc10d8 0%, rgba(80, 0, 250, 0.93) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: 300px auto;
+}
+.tabs__content-box h3 {
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.tabs__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+}
+.tabs__btn-item {
+  color: #5a5454;
+
+  font-weight: 700;
+}
+.tabs__btn-item-active {
+  color: #070707;
+  font-weight: 900;
+}
+.tabs__content {
+  position: relative;
+  min-height: 300px;
+}
+.tabs__content-img {
+  object-fit: cover;
+}
+.video__img {
+  object-fit: cover;
+}
+.tabs__content-item {
+  display: grid;
+  grid-template-columns: auto 280px;
+  grid-template-rows: auto 150px;
+  gap: 40px;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.3s ease;
+}
+.tabs__content-item-active {
+  opacity: 1;
+}
+.tabs__content-box {
+}
+.video {
+  width: 280px;
+  height: 150px;
+  background-image: url(../img/Rectangle\ 4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-start;
+  padding: 9px 10px;
+}
+.video__btn {
+  margin-left: 22px;
+}
+
+.video span {
+  font-size: 13px;
+  color: #fff;
+}
+
+.game {
+  margin-bottom: 100px;
+}
+
+.container {
+}
+.section-title {
+  margin-bottom: 50px;
+}
+.game__inner {
+  display: grid;
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /*ширина контейнера 1220 делится на 4 равные части*/
+}
+.game__descr {
+  padding-right: 10px;
+}
+.game__descr-title {
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #bc10d8 0%, rgba(80, 0, 250, 0.93) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+  font-size: 36px;
+}
+.game__descr-text {
+  margin-bottom: 30px;
+}
+.game__link {
+  display: inline-block; /*иначе тег а не застилить*/
+  background: linear-gradient(180deg, #bc10d8 0%, rgba(80, 0, 250, 0.93) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 14px 25px;
+  width: 225px;
+  text-align: center;
+  border: 1px solid #bc10d8;
+}
+.game__item {
+  border: 1px solid #bc10d8;
+  padding: 10px 20px 18px; /*верх низ и 20сбоку*/
+  display: flex;
+  flex-direction: column;
+}
+.game__item-img {
+  margin-bottom: 10px;
+}
+.game__item-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.game__item-text {
+  margin-bottom: 30px;
+}
+.game__item-link {
+  color: #bc10d8;
+  margin-top: auto; /*в комбинации с флекс это свойство прибьет книзу ссылку */
+}
+
+.buy {
+  margin-bottom: 110px;
+  text-align: center;
+  position: relative;
+  overflow-x: hidden; /*чтоб при анимации не было скрола */
+}
+
+.buy__bg {
+  background: linear-gradient(180deg, #bc10d8 0%, rgba(80, 0, 250, 0.93) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 350px;
+  font-weight: 700;
+  line-height: 450px;
+  opacity: 0.1;
+  position: absolute;
+  z-index: -1;
+  animation: line-text 8s linear 5s infinite;
+}
+
+@keyframes line-text {
+  from {
+    transform: translate(115%);
+    transform-origin: right center;
+  }
+  to {
+    transform: translate(-115%);
+    transform-origin: left center;
+  }
+}
+.buy__img {
+  margin-bottom: 30px;
+}
+.buy .buy-btn {
+  margin: 0 auto;
+}
+
+.equipment {
+  margin-bottom: 100px;
+}
+.equipment__title {
+  margin-bottom: 50px;
+}
+
+.equipment__box {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+}
+.equipment__box-img {
+  margin-bottom: 10px;
+}
+
+.equipment__box-title {
+  background: linear-gradient(180deg, #bc10d8 0%, rgba(80, 0, 250, 0.93) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 36px;
+  text-transform: uppercase;
+  line-height: 50px;
+}
+.box-item-one {
+  grid-row: 1/-1; /*растянули его на всю ширину 2fr и он подпихнул другие блоки как надо */
+}
+.promo {
+  margin-bottom: 100px;
+}
+.promo__inner {
+  background-image: url(../img/promo.png);
+  min-height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  position: relative;
+}
+.promo__btn {
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(180deg, #bc10d8 0%, rgba(80, 0, 250, 0.93) 100%);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.accsessories {
+  margin-bottom: 100px;
+}
+.accsessories__title {
+  margin-bottom: 30px;
+}
+.accsessories__item-title {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 14px;
+  flex-grow: 1;
+}
+
+.accsessories__text {
+  margin-bottom: 30px;
+  background: linear-gradient(180deg, #bc10d8 0%, rgba(80, 0, 250, 0.93) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-size: 36px;
+}
+
+.accsessories__items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.accsessories__item {
+  padding: 20px;
+  border: 1px solid;
+  border-image: linear-gradient(180deg, #bc10d8 0%, rgba(80, 0, 250, 0.93) 100%)
+    1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.paccsessories__text {
+  margin-bottom: 42px;
+}
+.accsessories__price {
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 18px;
+}
+.accsessories__btn {
+  border: 1px solid;
+  border-image: linear-gradient(180deg, #bc10d8 0%, rgba(80, 0, 250, 0.93) 100%)
+    1;
+  margin-bottom: 18px;
+  font-weight: 700;
+  color: #bc10d8;
+  text-align: center;
+  padding: 6px;
+  max-width: 100%;
+}
+.contacts {
+  margin-bottom: 100px;
+}
+
+.contacts__title {
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 8px;
+  font-size: 24px;
+}
+
+.contacts__form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.form-items {
+  display: flex;
+  justify-content: space-between;
+  min-height: 55px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #cacad6;
+}
+
+.contacts__form-items {
+}
+.contacts__form-input {
+  border: none;
+}
+.contacts__form-input::placeholder {
+  color: #cacad6;
+}
+
+.contacts__form-btn {
+  font-weight: 700;
+  color: #fff;
+  background-color: #cacad6;
+  border-radius: 50%;
+
+  width: 50px;
+  height: 50px;
+}
+
+.contacts__text {
+  color: #5c5c5e;
+}
+
+.contacts__email {
+  justify-self: end;
+  margin-top: auto;
+  color: #5c5c5e;
+}
+
+@media (max-width: 992px) {
+  .tabs__content-item {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .title {
+    font-size: 75px;
+  }
+  .subtitle {
+    font-size: 28px;
+  }
+}
+@media (max-width: 630px) {
+  .feature__titles {
+    display: block;
+  }
+  .future__title {
+    margin-bottom: 10px;
+  }
+  .feature__text {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 568px) {
+  .title {
+    font-size: 70px;
+  }
+  .subtitle {
+    font-size: 27px;
+  }
+  .buy-btn {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .container {
+    text-align: center;
+  }
+}
+@media (max-width: 420px) {
+  .title {
+    font-size: 48px;
+  }
+  .subtitle {
+    font-size: 21px;
+  }
+  .buy-btn {
+  }
+}
